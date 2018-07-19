@@ -1,2 +1,2 @@
 # typescript-fullstack-starter
-Full stack started with Typescript, Node and ReactJS
+Full stack starter with Typescript, Node and ReactJS
