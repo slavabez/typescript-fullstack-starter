@@ -61,4 +61,4 @@ typings/
 .next
 
 # Sensitive config files
-config/keys/dev.js
+config/keys/dev.ts
