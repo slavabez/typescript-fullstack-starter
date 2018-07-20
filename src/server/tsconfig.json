@@ -1,11 +1,14 @@
 {
-    "compilerOptions": {
-        "outDir": "../../dist/server/",
-        "module": "commonjs",
-        "target": "es5",
-        "sourceMap": true
-    },
-    "include": [
-        "./**/*.ts"
-    ]
+  "compilerOptions": {
+    "target": "es6",
+    "sourceMap": true,
+    "module": "commonjs",
+    "importHelpers": true,
+    "allowJs": true,
+    "outDir": "../../dist/server",
+    "lib": ["es6"],
+    "moduleResolution": "node",
+    "types": ["node"]
+  },
+  "files": ["./index.ts"]
 }
