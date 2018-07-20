@@ -4,7 +4,7 @@
   "description": "TS-React-Node starter",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node --inspect=5858 src/server/index.ts",
+    "start": "node --inspect=5858 -r ts-node/register src/server/index.ts",
     "dev": "./node_modules/nodemon/bin/nodemon.js",
     "test": "jest",
     "test:watch": "jest --watch"

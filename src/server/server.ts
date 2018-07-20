@@ -19,6 +19,7 @@ class Server {
     this.configure();
     this.connect();
     this.routes();
+    this.start();
   }
 
   public connect() {
@@ -68,6 +69,13 @@ class Server {
   public routes(): void {
     this.app.get("/", (req: express.Request, res: express.Response) => {
       res.send({ message: "Pong" });
+    });
+  }
+
+  public start(): void {
+    const PORT = (process.env.PORT) ? process.env.PORT : 5000;
+    this.app.listen(PORT, () => {
+      this.logger.info(`Express server listening on port ${PORT}`);
     });
   }
 }
