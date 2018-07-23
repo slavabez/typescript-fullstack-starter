@@ -54,7 +54,7 @@ class Server {
     );
 
     this.logger.info(
-      `The cookie key starts with ${keys.cookieKey.substr(0, 4)}`
+      `The cookie key starts with ${keys.cookieKey.substr(0, 2)}`
     );
 
     this.app.use(

@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node --inspect=5858 -r ts-node/register src/server/index.ts",
-    "dev": "./node_modules/nodemon/bin/nodemon.js",
+    "dev:server": "./node_modules/nodemon/bin/nodemon.js",
+    "dev:client": "parcel ./src/client/index.html",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "build:server": "tsc -p ./src/server",
+    "build:client": "parcel build ./src/client/index.html --out-dir './dist/client' --public-url '/'"
   },
   "jest": {
     "transform": {
@@ -63,6 +66,8 @@
     "concurrently": "^3.6.0",
     "jest": "^23.4.1",
     "nodemon": "^1.18.3",
+    "parcel-bundler": "^1.9.7",
+    "parcel-plugin-typescript": "^1.0.0",
     "ts-jest": "^23.0.1",
     "ts-loader": "^4.4.2",
     "ts-node": "^7.0.0",

@@ -64,3 +64,5 @@ typings/
 config/dev.json
 
 dist
+
+.cache
