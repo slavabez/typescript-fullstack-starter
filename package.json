@@ -25,7 +25,8 @@
       "tsx",
       "js",
       "json"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.ts"
   },
   "repository": "git@github.com:slavabez/typescript-fullstack-starter.git",
   "author": "Slava Bezgachev <bezgachev@gmail.com>",
@@ -55,6 +56,8 @@
     "@types/body-parser": "^1.17.0",
     "@types/compression": "^0.0.36",
     "@types/cors": "^2.8.4",
+    "@types/enzyme": "^3.1.12",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/express": "^4.16.0",
     "@types/helmet": "^0.0.38",
     "@types/jest": "^23.3.0",
@@ -64,6 +67,8 @@
     "@types/react-dom": "^16.0.6",
     "@types/winston": "^2.3.9",
     "concurrently": "^3.6.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.4.1",
     "nodemon": "^1.18.3",
     "parcel-bundler": "^1.9.7",
