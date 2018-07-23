@@ -4,13 +4,16 @@
   "description": "TS-React-Node starter",
   "main": "index.js",
   "scripts": {
-    "start": "node --inspect=5858 -r ts-node/register src/server/index.ts",
+    "server:debug": "node --inspect=5858 -r ts-node/register src/server/index.ts",
     "dev:server": "./node_modules/nodemon/bin/nodemon.js",
     "dev:client": "parcel ./src/client/index.html",
+    "dev": "concurrently 'yarn dev:server' 'yarn dev:client'",
     "test": "jest",
     "test:watch": "jest --watch",
+    "clean-dist": "rm -rf dist/*",
     "build:server": "tsc -p ./src/server",
-    "build:client": "parcel build ./src/client/index.html --out-dir './dist/client' --public-url '/'"
+    "build:client": "parcel build ./src/client/index.html --out-dir './dist/client' --public-url '/'",
+    "build": "yarn clean-dist && yarn build:server && yarn build:client"
   },
   "jest": {
     "transform": {
