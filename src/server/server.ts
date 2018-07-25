@@ -64,6 +64,23 @@ class Server {
         name: "session"
       })
     );
+    let corsOptions: object;
+    switch (env) {
+      case "production":
+        corsOptions = {
+          origin: "https://konfetka-shop.kz"
+        };
+        break;
+      case "test":
+      case "ci":
+      default:
+        corsOptions = {
+          origin: "*"
+        };
+    }
+    this.app.use(cors(corsOptions));
+
+    this.app.use(compression());
   }
 
   public routes(): void {
@@ -73,11 +90,13 @@ class Server {
   }
 
   public start(): void {
-    const PORT = (process.env.PORT) ? process.env.PORT : 5000;
+    const PORT = process.env.PORT ? process.env.PORT : 5000;
     this.app.listen(PORT, () => {
       this.logger.info(`Express server listening on port ${PORT}`);
     });
   }
+
+  public stop(): void {}
 }
 
 export default Server;
